@@ -1,0 +1,65 @@
+1a.
+format shortG
+a = 5:2:34
+
+1b.
+b = exp(a)
+
+1c.
+c = a ./ b
+
+1d.
+d = c'
+
+
+2a.
+A = [pi/2 3i;
+     log(2) 2*pi]
+
+2b.
+B = [exp(A(1,1)) exp(A(1,2))]
+C = [A; B]
+
+2c.
+S = sum(C, 2)
+
+
+3.
+A = 5;
+f = 5;
+sigma = 1.5;
+U1 = 3;
+U2 = 2;
+
+t = 0:0.001:1;
+
+s = A*sin(2*pi*f*t);
+n = sigma*randn(size(t));
+
+x = s + n;
+
+3a.
+atrinktos = x(x > U1);
+
+3b.
+filtruotas = x;
+filtruotas(abs(filtruotas) < U2) = 0;
+
+3c.
+dydis = length(x)
+
+3d.
+atrinktu_dydis = length(atrinktos)
+
+3e.
+didziausia = max(filtruotas)
+maziausia = min(filtruotas)
+
+
+Papildoma uzduotis
+
+A = input('Iveskite vektoriu A: ');
+B = [A(10:end) A(1:2:end)];
+
+disp('Vektorius B yra:')
+disp(B)
