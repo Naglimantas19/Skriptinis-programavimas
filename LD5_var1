@@ -1,0 +1,66 @@
+1a.
+x = 0:0.01:1;
+f = sin(2*pi*x);
+signalas.duomenys = f;
+signalas.x = x;
+signalas.pavadinimas = 'f(x) = sin(2*pi*x)';
+
+1b.
+figure
+plot(signalas.x, signalas.duomenys)
+
+xlabel('x')
+ylabel('f(x)')
+title(signalas.pavadinimas)
+grid on
+
+2.
+while true
+
+    a = input('Iveskite a: ');
+    b = input('Iveskite b: ');
+    c = input('Iveskite c: ');
+    x = input('Iveskite x: ');
+
+    if a == 0 && b == 0 && c == 1 && x == 1
+        disp('Programa baigta')
+        break
+    end
+
+    f = a*x^2 + b*x + c;
+
+    disp('Funkcijos reiksme:')
+    disp(f)
+
+end
+
+
+Papildoma
+A = [];
+B = [];
+
+while true
+
+    a = round(rand*5);
+    b = round(rand*7);
+
+    if ~isempty(A) && any(A == a & B == b)
+        break
+    end
+
+    A = [A a];
+    B = [B b];
+
+end
+
+figure
+
+plot(A)
+hold on
+plot(B)
+
+xlabel('Generavimo numeris')
+ylabel('Sugeneruotas skaicius')
+title('Atsitiktiniu skaiciu kitimas')
+legend('Pirmas skaicius', 'Antras skaicius')
+grid on
