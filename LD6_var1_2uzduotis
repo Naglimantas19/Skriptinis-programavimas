@@ -1,0 +1,28 @@
+function skaiciuoti()
+
+global x y
+
+y = sin(x) + cos(x);
+
+end
+
+////////////////////////////////////////////
+
+clear
+clc
+
+global x y
+
+x = 0:0.1:2*pi;
+
+skaiciuoti()
+
+figure
+plot(x, y, 'r:s')
+
+xlabel('x')
+ylabel('sin(x) + cos(x)')
+title('Globalus MATLAB kintamieji')
+grid on
+
+whos
